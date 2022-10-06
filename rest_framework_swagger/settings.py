@@ -10,6 +10,8 @@ DEFAULTS = {
             'type': 'basic'
         }
     },
+    'SECURITY': [],
+    'SCHEMES': [],
     'LOGIN_URL': getattr(settings, 'LOGIN_URL', None),
     'LOGOUT_URL': getattr(settings, 'LOGOUT_URL', None),
     'DOC_EXPANSION': None,

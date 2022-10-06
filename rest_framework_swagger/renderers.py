@@ -7,7 +7,7 @@ from rest_framework.renderers import BaseRenderer, JSONRenderer
 from rest_framework import status
 import simplejson as json
 
-from .settings import swagger_settings as settings
+from rest_framework_swagger.settings import swagger_settings as settings
 
 
 class OpenAPICodec(_OpenAPICodec):
@@ -40,7 +40,10 @@ class OpenAPIRenderer(BaseRenderer):
         data = {}
         if settings.SECURITY_DEFINITIONS:
             data['securityDefinitions'] = settings.SECURITY_DEFINITIONS
-
+        if settings.SECURITY:
+            data['security'] = settings.SECURITY
+        if settings.SCHEMES:
+            data['schemes'] = settings.SCHEMES
         return data
 
 
